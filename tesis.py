@@ -32,6 +32,9 @@ data=json.loads(json_data)
 
 print "Hola"
 
+print data[1]["text"]
+
+print "Hola2"
 wordNetLemmatizer = WordNetLemmatizer()
 
 #titles = [line.rstrip() for line in open('all_book_titles.txt')]
