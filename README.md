@@ -3,7 +3,7 @@ Tesis MCI
 
 
 # Data
-Data extracted from https://archive.org/details/archiveteam-twitter-stream-2017-11
+Data extracted from https://archive.org/details/archiveteam-twitter-stream-2017-11 
 Data preparation executed:
 - Adding "[]" and "," to completed json format.
 - Select a DB that can be read without errors.
