@@ -10,7 +10,7 @@ from sklearn.decomposition import TruncatedSVD
 from pprint import pprint
 
 #Uploading Twitter data
-json_data = open('DB/00test.json').read()
+json_data = open('DB/01.json').read()
 data=json.loads(json_data)
 
 # with open('DB/00test.json') as data_file:
