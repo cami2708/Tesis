@@ -10,7 +10,13 @@ from sklearn.decomposition import TruncatedSVD
 from pprint import pprint
 
 #Uploading Twitter data
-data = json.load(open('DB/00.json'))
+json_data = open('DB/00test.json').read()
+data=json.loads(json_data)
+
+# with open('DB/00test.json') as data_file:
+#     data_item = json.load(data_file)
+# pprint(data_item)
+
 #I care about: 
 # text
 # in_reply_to_status_id
@@ -22,9 +28,9 @@ data = json.load(open('DB/00.json'))
 # country_code
 
 #This is for practice how to call the DB
-print data["text"][3]
+#print data["id"][12]
 
-
+print "Hola"
 
 wordNetLemmatizer = WordNetLemmatizer()
 
