@@ -4,6 +4,7 @@ import nltk
 import numpy as np
 import matplotlib.pyplot as plt
 import json
+import codecs
 
 from nltk.stem import WordNetLemmatizer
 from sklearn.decomposition import TruncatedSVD
@@ -13,7 +14,8 @@ from pprint import pprint
 json_data = open('DB/01.json').read()
 data=json.loads(json_data)
 
-# with open('DB/00test.json') as data_file:
+# Uncoment for python 3
+# with open('DB/01.json') as data_file:
 #     data_item = json.load(data_file)
 # pprint(data_item)
 
@@ -27,14 +29,17 @@ data=json.loads(json_data)
 # user[lang]
 # country_code
 
-#This is for practice how to call the DB
-#print data["id"][12]
+#English data
+ENdata = []
 
 print "Hola"
-
-print data[1]["text"]
-
+#data2 = data.decode('utf8')  # it is already UTF8, decode to unicode
+ENdata = data[1]["text"]
 print "Hola2"
+print ENdata
+print "Hola3"
+
+
 wordNetLemmatizer = WordNetLemmatizer()
 
 #titles = [line.rstrip() for line in open('all_book_titles.txt')]
