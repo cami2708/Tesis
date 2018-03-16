@@ -14,28 +14,6 @@ from pprint import pprint
 #Uploading Twitter data
 json_data = open('DB/01.json').read()
 data = json.loads(json_data)
-
-twitterText = []
-#English data
-enData = []
-
-print data[0]["lang"]
-print len(twitterText)
-
-for i in range(0,len(data)):
-	if data[i]["lang"] == "en":
-		twitterText = [data[i]["text"]]
-		twitterText.append(twitterText)
-		enData = [data[i]]
-		enData.append(enData)
-
-print len(twitterText)
-print len(enData)
-# Uncoment for python 3
-# with open('DB/01.json') as data_file:
-#     data_item = json.load(data_file)
-# pprint(data_item)
-
 #I care about: 
 # text
 # in_reply_to_status_id
@@ -46,12 +24,29 @@ print len(enData)
 # user[lang]
 # country_code
 
+twitterText = []
 #English data
+enData = []
 
 
-print "Hola2"
-print enData[1]
-print "Hola3"
+for i in range(0,len(data)):
+	if data[i]["lang"] == "en":
+		singleTwitterText = [data[i]["text"]]
+		twitterText.append(singleTwitterText)
+		singleEnData = [data[i]]
+		enData.append(singleEnData)
+
+# Get the number of tweet in English
+# print len(twitterText)
+
+# Get a single text from twitterText DB
+# print twitterText[1][0]
+
+# Uncoment for python 3
+# with open('DB/01.json') as data_file:
+#     data_item = json.load(data_file)
+# pprint(data_item)
+
 
 
 wordNetLemmatizer = WordNetLemmatizer()
