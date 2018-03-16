@@ -5,6 +5,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import json
 import codecs
+import urllib2
 
 from nltk.stem import WordNetLemmatizer
 from sklearn.decomposition import TruncatedSVD
@@ -12,8 +13,23 @@ from pprint import pprint
 
 #Uploading Twitter data
 json_data = open('DB/01.json').read()
-data=json.loads(json_data)
+data = json.loads(json_data)
 
+twitterText = []
+
+print data[0]["text"]
+print len(twitterText)
+
+for i in range(0,5):
+#for i in range(0,len(data)):
+	print i
+	print data[i]["text"]
+	twitterText = [data[i]["text"]]
+	twitterText.append(twitterText)
+	print twitterText[i]
+	print twitterText[i][i]
+
+print twitterText[1]
 # Uncoment for python 3
 # with open('DB/01.json') as data_file:
 #     data_item = json.load(data_file)
@@ -36,7 +52,7 @@ print "Hola"
 #data2 = data.decode('utf8')  # it is already UTF8, decode to unicode
 ENdata = data[1]["text"]
 print "Hola2"
-print ENdata
+print ENdata[1]
 print "Hola3"
 
 
