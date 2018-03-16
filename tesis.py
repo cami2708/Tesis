@@ -16,20 +16,21 @@ json_data = open('DB/01.json').read()
 data = json.loads(json_data)
 
 twitterText = []
+#English data
+enData = []
 
-print data[0]["text"]
+print data[0]["lang"]
 print len(twitterText)
 
-for i in range(0,5):
-#for i in range(0,len(data)):
-	print i
-	print data[i]["text"]
-	twitterText = [data[i]["text"]]
-	twitterText.append(twitterText)
-	print twitterText[i]
-	print twitterText[i][i]
+for i in range(0,len(data)):
+	if data[i]["lang"] == "en":
+		twitterText = [data[i]["text"]]
+		twitterText.append(twitterText)
+		enData = [data[i]]
+		enData.append(enData)
 
-print twitterText[1]
+print len(twitterText)
+print len(enData)
 # Uncoment for python 3
 # with open('DB/01.json') as data_file:
 #     data_item = json.load(data_file)
@@ -46,13 +47,10 @@ print twitterText[1]
 # country_code
 
 #English data
-ENdata = []
 
-print "Hola"
-#data2 = data.decode('utf8')  # it is already UTF8, decode to unicode
-ENdata = data[1]["text"]
+
 print "Hola2"
-print ENdata[1]
+print enData[1]
 print "Hola3"
 
 
