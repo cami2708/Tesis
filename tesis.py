@@ -6,14 +6,16 @@ import matplotlib.pyplot as plt
 import json
 import codecs
 import urllib2
+import io
 
 from nltk.stem import WordNetLemmatizer
 from sklearn.decomposition import TruncatedSVD
 from pprint import pprint
 
-#Uploading Twitter data
-json_data = open('DB/01.json').read()
-data = json.loads(json_data)
+#Uploading English Twitter data
+json_data = open('DB/enData.json').read()
+#English data
+enData = json.loads(json_data)
 #I care about: 
 # text
 # in_reply_to_status_id
@@ -24,28 +26,25 @@ data = json.loads(json_data)
 # user[lang]
 # country_code
 
+# Uncoment for python 3
+# with open('DB/enData.json') as data_file:
+#     data_item = json.load(data_file)
+# pprint(data_item)
+
+
 twitterText = []
-#English data
-enData = []
 
+print len(enData)
 
-for i in range(0,len(data)):
-	if data[i]["lang"] == "en":
-		singleTwitterText = [data[i]["text"]]
-		twitterText.append(singleTwitterText)
-		singleEnData = [data[i]]
-		enData.append(singleEnData)
+for i in range(0,len(enData)):
+	singleTwitterText = [enData[i][0]["text"]]
+	twitterText.append(singleTwitterText)
 
 # Get the number of tweet in English
 # print len(twitterText)
-
+print enData[1][0]["text"]
 # Get a single text from twitterText DB
-# print twitterText[1][0]
-
-# Uncoment for python 3
-# with open('DB/01.json') as data_file:
-#     data_item = json.load(data_file)
-# pprint(data_item)
+print twitterText[1][0]
 
 
 
